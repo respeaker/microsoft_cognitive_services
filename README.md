@@ -6,10 +6,15 @@ and add it to those scripts.
 
 ### Speech To Text
 
-+ bing_recognizer.py
++ bing_voice.py
 
-  `python bing_recognizer.py sample.wav` recognizes audio from file (16000 sample rate, 1 channel)
+  `python bing_voice.py sample.wav` recognizes audio from file (16000 sample rate, 1 channel)
 
 + bing_stt_with_vad.py
 
-  Read audio from micphone, pre-process audio with voice activity detector (VAD) and then recognize 
+  Read audio from microphone, pre-process audio with voice activity detector (VAD) and then recognize
+
+### Text To Speech
++ tts.py
+
+  `python tts.py 'hello, Respeaker is being actively developed. Stay tuned'`

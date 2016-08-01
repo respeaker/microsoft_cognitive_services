@@ -7,7 +7,7 @@ Requirements:
 
 '''
 
-from bing_recognizer import BingVoiceRecognizer, UnknownValueError, RequestError
+from bing_voice import *
 import webrtcvad
 import collections
 import sys
@@ -28,7 +28,7 @@ NUM_PADDING_CHUNKS = int(PADDING_DURATION_MS / CHUNK_DURATION_MS)
 NUM_WINDOW_CHUNKS = int(240 / CHUNK_DURATION_MS)
 
 vad = webrtcvad.Vad(2)
-recognizer = BingVoiceRecognizer(BING_KEY)
+bing = BingVoice(BING_KEY)
 
 pa = pyaudio.PyAudio()
 stream = pa.open(format=FORMAT,
@@ -96,7 +96,7 @@ while not leave:
 
     # recognize speech using Microsoft Bing Voice Recognition
     try:
-        text = recognizer.recognize(data, language='zh-CN')
+        text = bing.recognize(data, language='zh-CN')
         print('Bing:' + text.encode('utf-8'))
     except UnknownValueError:
         print("Microsoft Bing Voice Recognition could not understand audio")
