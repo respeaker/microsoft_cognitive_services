@@ -104,7 +104,7 @@ class BingVoice():
             "result.profanitymarkup": "0",
         }))
         request = Request(url, data=wav_data, headers={
-            "Authorization": "Bearer {0}".format(access_token),
+            "Authorization": "Bearer {0}".format(self.access_token),
             "Content-Type": "audio/wav; samplerate=16000; sourcerate={0}; trustsourcerate=true".format(16000),
         })
         try:
