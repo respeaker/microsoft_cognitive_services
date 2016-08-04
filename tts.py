@@ -1,9 +1,10 @@
 from bing_voice import *
 import pyaudio
 import sys
+import wave
 
 # get a key from https://www.microsoft.com/cognitive-services/en-us/speech-api
-BING_KEY = ''
+BING_KEY = '9bbf8e99ad2446aa93db0b11e4b91088'
 CHUNK_SIZE = 2048
 
 if len(sys.argv) < 2:
@@ -23,3 +24,13 @@ stream = pa.open(format=pyaudio.paInt16,
 
 stream.write(data)
 stream.close()
+
+if len(sys.argv) >= 3:
+    wf = wave.open(sys.argv[2], 'wb')
+    wf.setframerate(16000)
+    wf.setnchannels(1)
+    wf.setsampwidth(2)
+
+    wf.writeframes(data)
+    wf.close()
+
