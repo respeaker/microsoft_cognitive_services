@@ -1,3 +1,6 @@
+# Please use [bing_speech_api.py](https://github.com/respeaker/respeaker_python_library/blob/master/respeaker/bing_speech_api.py) instead
+
+
 Python scripts to use microsoft cognitive services
 ==================================================
 
